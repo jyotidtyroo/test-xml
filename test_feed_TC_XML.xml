@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ================================================================
+  PRODUCT FEED TEST FILE
+  Test Cases: TC_XML_005 to TC_XML_050
+  Generated : 2026-06-06
+  Based on  : my_product_feed.xml (Fastrack Eyewear feed structure)
+  ================================================================
+
+  IMPORTANT NOTES:
+  ─────────────────────────────────────────────────────────────────
+  TC_XML_028 (Malformed XML):
+    Cannot be included in a valid XML file.
+    To test, create a SEPARATE file (e.g., tc_xml_028_malformed.xml)
+    with a missing closing tag, for example:
+      <item>
+        <id>TC_XML_028_MALFORMED</id>
+        <title>Malformed Product
+      </item>
+    Expected result: Feed validation fails with a proper error message.
+
+  TC_XML_023 (Large Feed / 1000 products):
+    This file includes a representative sample (template + extras).
+    To simulate 1000 products, duplicate TC_XML_023_TEMPLATE
+    items with unique IDs using a feed generator script.
+  ─────────────────────────────────────────────────────────────────
+-->
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Test Product Feed TC_XML_005 to TC_XML_050</title>
+    <link>https://example.com</link>
+    <description>XML test feed covering repeated nodes, special values, image links, similar node names and cross-column contamination.</description>
+
+    <!-- ============================================================
+         TC_XML_005 | Duplicate Values
+         Input   : <g:color>Red</g:color><g:color>Red</g:color>
+         Expected: Color column contains "Red,Red"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_005</id>
+      <title>Test Product - Duplicate Color Values</title>
+      <link>https://example.com/product/tc-xml-005</link>
+      <description>Product to test duplicate g:color node values.</description>
+      <image_link>https://example.com/images/tc-xml-005.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Red</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_006 | Empty Repeated Node
+         Input   : <g:color>Red</g:color><g:color></g:color>
+         Expected: Feed processes successfully; empty value handled per config
+         ============================================================ -->
+    <item>
+      <id>TC_XML_006</id>
+      <title>Test Product - Empty Repeated Color Node</title>
+      <link>https://example.com/product/tc-xml-006</link>
+      <description>Product to test one valid and one empty g:color node.</description>
+      <image_link>https://example.com/images/tc-xml-006.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color></g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_007 | Missing Node
+         Input   : No g:color node present
+         Expected: Feed processes successfully; Color column remains blank
+         ============================================================ -->
+    <item>
+      <id>TC_XML_007</id>
+      <title>Test Product - Missing Color Node</title>
+      <link>https://example.com/product/tc-xml-007</link>
+      <description>Product to test absence of g:color node.</description>
+      <image_link>https://example.com/images/tc-xml-007.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <!-- No g:color node present; Color column should remain blank -->
+    </item>
+
+    <!-- ============================================================
+         TC_XML_008 | Repeated Node Order Preservation
+         Input   : <g:size>L</g:size><g:size>M</g:size><g:size>S</g:size>
+         Expected: Size column contains "L,M,S"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_008</id>
+      <title>Test Product - Size Order Preservation</title>
+      <link>https://example.com/product/tc-xml-008</link>
+      <description>Product to test that repeated g:size node order is preserved (L, M, S).</description>
+      <image_link>https://example.com/images/tc-xml-008.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:size>L</g:size>
+      <g:size>M</g:size>
+      <g:size>S</g:size>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_009 | Repeated Nodes Separated by Other Nodes
+         Input   : <g:color>Red</g:color><g:size>M</g:size><g:color>Blue</g:color>
+         Expected: Color column = "Red,Blue"; Size column = "M"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_009</id>
+      <title>Test Product - Interleaved Repeated Nodes</title>
+      <link>https://example.com/product/tc-xml-009</link>
+      <description>Product to test interleaved g:color and g:size nodes; parser must group same nodes correctly.</description>
+      <image_link>https://example.com/images/tc-xml-009.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:size>M</g:size>
+      <g:color>Blue</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_010 | Special Characters in Node Value
+         Input   : <g:title>Men's T-Shirt &amp; Jeans</g:title>
+         Expected: Value displayed correctly as "Men's T-Shirt & Jeans"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_010</id>
+      <title>Men's T-Shirt &amp; Jeans</title>
+      <link>https://example.com/product/tc-xml-010</link>
+      <description>Product to test special characters (apostrophe and ampersand entity) in title.</description>
+      <image_link>https://example.com/images/tc-xml-010.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Black</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_011 | XML Entities
+         Input   : <g:title>Tom &amp; Jerry</g:title>
+         Expected: Output displays "Tom & Jerry"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_011</id>
+      <title>Tom &amp; Jerry</title>
+      <link>https://example.com/product/tc-xml-011</link>
+      <description>Product to test XML entity decoding — &amp;amp; must decode to &amp;.</description>
+      <image_link>https://example.com/images/tc-xml-011.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_012 | Unicode Values
+         Input   : <g:title>नमस्ते</g:title>
+         Expected: Unicode (UTF-8) text displayed correctly
+         ============================================================ -->
+    <item>
+      <id>TC_XML_012</id>
+      <title>नमस्ते</title>
+      <link>https://example.com/product/tc-xml-012</link>
+      <description>Product to test UTF-8 Unicode title value (Hindi: Namaste).</description>
+      <image_link>https://example.com/images/tc-xml-012.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_013 | Long Node Value
+         Input   : ~1000-character description value
+         Expected: Complete value stored without truncation
+         ============================================================ -->
+    <item>
+      <id>TC_XML_013</id>
+      <title>Test Product - Long Description (1000 chars)</title>
+      <link>https://example.com/product/tc-xml-013</link>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipiscing velit, sed quia non numquam eius modi tempora incidunt labore et dolore magnam aliquam quaerat.</description>
+      <image_link>https://example.com/images/tc-xml-013.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_014 | Node Value Containing Comma
+         Input   : <g:title>Red, Blue Shirt</g:title>
+         Expected: Entire value "Red, Blue Shirt" stored correctly
+         ============================================================ -->
+    <item>
+      <id>TC_XML_014</id>
+      <title>Red, Blue Shirt</title>
+      <link>https://example.com/product/tc-xml-014</link>
+      <description>Product to test that a comma inside a node value is handled correctly and the value is not split.</description>
+      <image_link>https://example.com/images/tc-xml-014.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_015 | CDATA Content
+         Input   : <g:description><![CDATA[Special Offer]]></g:description>
+         Expected: Description contains "Special Offer"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_015</id>
+      <title>Test Product - CDATA Description</title>
+      <link>https://example.com/product/tc-xml-015</link>
+      <description><![CDATA[This is a base description using CDATA to test CDATA handling in the standard description node.]]></description>
+      <g:description><![CDATA[Special Offer]]></g:description>
+      <image_link>https://example.com/images/tc-xml-015.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_016 | High Occurrence Count
+         Input   : <g:size>S1</g:size> ... <g:size>S10</g:size> (10 nodes)
+         Expected: All 10 values appear in Size column (S1,S2,...,S10)
+         ============================================================ -->
+    <item>
+      <id>TC_XML_016</id>
+      <title>Test Product - Ten Size Values</title>
+      <link>https://example.com/product/tc-xml-016</link>
+      <description>Product to test g:size node repeated 10 times.</description>
+      <image_link>https://example.com/images/tc-xml-016.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:size>S1</g:size>
+      <g:size>S2</g:size>
+      <g:size>S3</g:size>
+      <g:size>S4</g:size>
+      <g:size>S5</g:size>
+      <g:size>S6</g:size>
+      <g:size>S7</g:size>
+      <g:size>S8</g:size>
+      <g:size>S9</g:size>
+      <g:size>S10</g:size>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_017 | Multiple Products
+         Product A has 2 colors; Product B has 3 colors
+         Expected: Each product retains its own color values
+         ============================================================ -->
+    <item>
+      <id>TC_XML_017_PRODUCT_A</id>
+      <title>Test Product A - Two Colors</title>
+      <link>https://example.com/product/tc-xml-017-a</link>
+      <description>TC_XML_017 Product A: should have exactly 2 colors (Red, Blue).</description>
+      <image_link>https://example.com/images/tc-xml-017-a.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Blue</g:color>
+    </item>
+
+    <item>
+      <id>TC_XML_017_PRODUCT_B</id>
+      <title>Test Product B - Three Colors</title>
+      <link>https://example.com/product/tc-xml-017-b</link>
+      <description>TC_XML_017 Product B: should have exactly 3 colors (Purple, Yellow, Orange).</description>
+      <image_link>https://example.com/images/tc-xml-017-b.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>120.00 INR</price>
+      <sale_price>120.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Purple</g:color>
+      <g:color>Yellow</g:color>
+      <g:color>Orange</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_018 | Product Isolation
+         Product A: Red, Blue  |  Product B: Green only
+         Expected: Product B contains only "Green"; no Red or Blue leaks in
+         ============================================================ -->
+    <item>
+      <id>TC_XML_018_PRODUCT_A</id>
+      <title>Test Product A - Isolation Source (Red, Blue)</title>
+      <link>https://example.com/product/tc-xml-018-a</link>
+      <description>TC_XML_018 Product A: colors Red and Blue must not leak into Product B.</description>
+      <image_link>https://example.com/images/tc-xml-018-a.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Blue</g:color>
+    </item>
+
+    <item>
+      <id>TC_XML_018_PRODUCT_B</id>
+      <title>Test Product B - Isolation Target (Green only)</title>
+      <link>https://example.com/product/tc-xml-018-b</link>
+      <description>TC_XML_018 Product B: must contain only Green; verify Red and Blue from Product A do not appear here.</description>
+      <image_link>https://example.com/images/tc-xml-018-b.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>110.00 INR</price>
+      <sale_price>110.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Green</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_019 | Mixed Repeated and Non-Repeated Nodes
+         Input   : Single title node + two g:color nodes
+         Expected: Title mapped correctly; Colors aggregated as "Red,Green"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_019</id>
+      <title>Test Product - Mixed Single and Repeated Nodes</title>
+      <link>https://example.com/product/tc-xml-019</link>
+      <description>Product to test single title node alongside two repeated g:color nodes.</description>
+      <image_link>https://example.com/images/tc-xml-019.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Green</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_020 | Unknown Node
+         Input   : <g:custom_attribute>ABC</g:custom_attribute>
+         Expected: Feed processes successfully; supported nodes unaffected
+         ============================================================ -->
+    <item>
+      <id>TC_XML_020</id>
+      <title>Test Product - Unknown Custom Attribute Node</title>
+      <link>https://example.com/product/tc-xml-020</link>
+      <description>Product to test that an unknown/unsupported node does not affect supported node processing.</description>
+      <image_link>https://example.com/images/tc-xml-020.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Blue</g:color>
+      <g:custom_attribute>ABC</g:custom_attribute>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_021 | Node Names with Different Cases
+         Input   : <g:Color>Red</g:Color> and <g:color>Blue</g:color>
+         Expected: Processed according to feed specification (case-sensitive)
+         NOTE: g:Color (capital C) and g:color are different XML elements
+         ============================================================ -->
+    <item>
+      <id>TC_XML_021</id>
+      <title>Test Product - Case Sensitivity in Node Names</title>
+      <link>https://example.com/product/tc-xml-021</link>
+      <description>Product to test case sensitivity: g:Color (capital C) vs g:color (lowercase c).</description>
+      <image_link>https://example.com/images/tc-xml-021.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:Color>Red</g:Color>
+      <g:color>Blue</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_022 | Namespace Node Parsing
+         Input   : <g:color>Red</g:color>
+         Expected: Namespace-prefixed node value mapped correctly
+         ============================================================ -->
+    <item>
+      <id>TC_XML_022</id>
+      <title>Test Product - Namespace Node Parsing</title>
+      <link>https://example.com/product/tc-xml-022</link>
+      <description>Product to test that the g: namespace-prefixed node g:color is parsed and mapped correctly.</description>
+      <image_link>https://example.com/images/tc-xml-022.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_023 | Large Feed Processing (Performance)
+         Input   : 1000+ products with repeated nodes
+         Expected: Feed processed successfully within acceptable time
+         NOTE: This file includes a template product + 5 sample products.
+               Use a script to duplicate TC_XML_023_TEMPLATE to 1000 items.
+         ============================================================ -->
+    <item>
+      <id>TC_XML_023_TEMPLATE</id>
+      <title>Large Feed Template Product 001</title>
+      <link>https://example.com/product/tc-xml-023-001</link>
+      <description>Template product for large feed performance test (TC_XML_023). Duplicate with unique IDs to generate 1000 products.</description>
+      <image_link>https://example.com/images/tc-xml-023-001.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Blue</g:color>
+      <g:size>M</g:size>
+      <g:size>L</g:size>
+    </item>
+
+    <item>
+      <id>TC_XML_023_002</id>
+      <title>Large Feed Sample Product 002</title>
+      <link>https://example.com/product/tc-xml-023-002</link>
+      <description>Large feed sample product 002 for TC_XML_023.</description>
+      <image_link>https://example.com/images/tc-xml-023-002.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>150.00 INR</price>
+      <sale_price>130.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Male</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Green</g:color>
+      <g:size>S</g:size>
+    </item>
+
+    <item>
+      <id>TC_XML_023_003</id>
+      <title>Large Feed Sample Product 003</title>
+      <link>https://example.com/product/tc-xml-023-003</link>
+      <description>Large feed sample product 003 for TC_XML_023.</description>
+      <image_link>https://example.com/images/tc-xml-023-003.jpg</image_link>
+      <availability>out of stock</availability>
+      <condition>new</condition>
+      <price>200.00 INR</price>
+      <sale_price>200.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Female</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Black</g:color>
+      <g:size>XL</g:size>
+    </item>
+
+    <item>
+      <id>TC_XML_023_004</id>
+      <title>Large Feed Sample Product 004</title>
+      <link>https://example.com/product/tc-xml-023-004</link>
+      <description>Large feed sample product 004 for TC_XML_023.</description>
+      <image_link>https://example.com/images/tc-xml-023-004.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>180.00 INR</price>
+      <sale_price>160.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>White</g:color>
+      <g:color>Grey</g:color>
+      <g:size>M</g:size>
+    </item>
+
+    <item>
+      <id>TC_XML_023_005</id>
+      <title>Large Feed Sample Product 005</title>
+      <link>https://example.com/product/tc-xml-023-005</link>
+      <description>Large feed sample product 005 for TC_XML_023.</description>
+      <image_link>https://example.com/images/tc-xml-023-005.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>220.00 INR</price>
+      <sale_price>200.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Male</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Navy</g:color>
+      <g:size>S</g:size>
+      <g:size>M</g:size>
+      <g:size>L</g:size>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_024 | Feed Reprocessing
+         Input   : Product with repeated g:color nodes (Red, Blue)
+         Expected: Same values appear after reprocessing the feed
+         ============================================================ -->
+    <item>
+      <id>TC_XML_024</id>
+      <title>Test Product - Feed Reprocessing Consistency</title>
+      <link>https://example.com/product/tc-xml-024</link>
+      <description>Product to verify repeated g:color values remain consistent after feed is uploaded and processed twice.</description>
+      <image_link>https://example.com/images/tc-xml-024.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Blue</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_025 | Multiple Repeated Attributes
+         Input   : Color×2, Size×3, Material×2
+         Expected: Color="Red,Green" | Size="S,M,L" | Material="Cotton,Polyester"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_025</id>
+      <title>Test Product - Multiple Repeated Attributes</title>
+      <link>https://example.com/product/tc-xml-025</link>
+      <description>Product to test several simultaneously repeated nodes: Color(2), Size(3), Material(2).</description>
+      <image_link>https://example.com/images/tc-xml-025.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Green</g:color>
+      <g:size>S</g:size>
+      <g:size>M</g:size>
+      <g:size>L</g:size>
+      <g:material>Cotton</g:material>
+      <g:material>Polyester</g:material>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_026 | Cross-Node Contamination Check
+         Input   : g:color=Red,Blue and g:size=S,M
+         Expected: Color column contains ONLY "Red,Blue"; Size column contains ONLY "S,M"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_026</id>
+      <title>Test Product - Cross-Node Contamination Check</title>
+      <link>https://example.com/product/tc-xml-026</link>
+      <description>Product to verify that g:color values never appear in the Size column and g:size values never appear in the Color column.</description>
+      <image_link>https://example.com/images/tc-xml-026.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Blue</g:color>
+      <g:size>S</g:size>
+      <g:size>M</g:size>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_027 | Blank Occurrence in Between
+         Input   : <g:color>Red</g:color><g:color></g:color><g:color>Blue</g:color>
+         Expected: Blank handled per config; valid values Red and Blue preserved
+         ============================================================ -->
+    <item>
+      <id>TC_XML_027</id>
+      <title>Test Product - Blank Color Node Between Valid Values</title>
+      <link>https://example.com/product/tc-xml-027</link>
+      <description>Product to test a blank g:color node sandwiched between two valid values (Red and Blue).</description>
+      <image_link>https://example.com/images/tc-xml-027.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color></g:color>
+      <g:color>Blue</g:color>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_028 | Malformed XML  ← SEE HEADER NOTE
+         This test case CANNOT be embedded in a valid XML file.
+         Create a separate file: tc_xml_028_malformed.xml
+         Example malformed content:
+           <item>
+             <id>TC_XML_028</id>
+             <title>Malformed Product Missing Closing Tag
+           </item>
+         Expected: Feed validation fails with proper error message.
+         ============================================================ -->
+
+    <!-- ============================================================
+         TC_XML_029 | XML vs CSV Parity
+         Input   : A well-structured product in XML
+         Expected: Output identical to equivalent CSV row
+         ============================================================ -->
+    <item>
+      <id>TC_XML_029</id>
+      <title>Test Product - XML CSV Parity Check</title>
+      <link>https://example.com/product/tc-xml-029</link>
+      <description>Product to verify XML and CSV feeds produce identical output for the same data.</description>
+      <image_link>https://example.com/images/tc-xml-029.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>299.00 INR</price>
+      <sale_price>249.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <google_product_category>Apparel &amp; Accessories &gt; Clothing</google_product_category>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Blue</g:color>
+      <g:size>M</g:size>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_030 | Node Sequence Variation
+         Input   : g:size appears before id; g:color appears after title
+         Expected: All values mapped correctly regardless of node order
+         ============================================================ -->
+    <item>
+      <g:size>XL</g:size>
+      <id>TC_XML_030</id>
+      <g:color>Yellow</g:color>
+      <title>Test Product - Random Node Order</title>
+      <Brand>TestBrand</Brand>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <description>Product to test that Size, ID, Color in non-standard order are all mapped correctly.</description>
+      <link>https://example.com/product/tc-xml-030</link>
+      <image_link>https://example.com/images/tc-xml-030.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_031 | Single Additional Image Link
+         Input   : One g:additional_image_link node
+         Expected: Additional Image Link column contains the URL
+         ============================================================ -->
+    <item>
+      <id>TC_XML_031</id>
+      <title>Test Product - Single Additional Image Link</title>
+      <link>https://example.com/product/tc-xml-031</link>
+      <description>Product to test a single g:additional_image_link node is mapped correctly.</description>
+      <image_link>https://example.com/images/tc-xml-031-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_032 | Multiple Additional Image Links
+         Input   : Two g:additional_image_link nodes
+         Expected: Column contains "img1.jpg,img2.jpg"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_032</id>
+      <title>Test Product - Two Additional Image Links</title>
+      <link>https://example.com/product/tc-xml-032</link>
+      <description>Product to test aggregation of two g:additional_image_link nodes.</description>
+      <image_link>https://example.com/images/tc-xml-032-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img2.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_033 | Five Additional Image Links
+         Input   : Five g:additional_image_link nodes
+         Expected: All 5 URLs present in output
+         ============================================================ -->
+    <item>
+      <id>TC_XML_033</id>
+      <title>Test Product - Five Additional Image Links</title>
+      <link>https://example.com/product/tc-xml-033</link>
+      <description>Product to test five g:additional_image_link nodes are all captured.</description>
+      <image_link>https://example.com/images/tc-xml-033-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img4.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img5.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_034 | Duplicate Additional Image Links
+         Input   : img1.jpg repeated twice in g:additional_image_link
+         Expected: Output contains "img1.jpg,img1.jpg" (duplicates preserved)
+         ============================================================ -->
+    <item>
+      <id>TC_XML_034</id>
+      <title>Test Product - Duplicate Additional Image Links</title>
+      <link>https://example.com/product/tc-xml-034</link>
+      <description>Product to test duplicate g:additional_image_link values are preserved.</description>
+      <image_link>https://example.com/images/tc-xml-034-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_035 | Empty Additional Image Link
+         Input   : One valid URL + one empty g:additional_image_link
+         Expected: Feed processes successfully; valid URL remains available
+         ============================================================ -->
+    <item>
+      <id>TC_XML_035</id>
+      <title>Test Product - Empty Additional Image Link Node</title>
+      <link>https://example.com/product/tc-xml-035</link>
+      <description>Product to test one valid and one empty g:additional_image_link node.</description>
+      <image_link>https://example.com/images/tc-xml-035-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <g:additional_image_link></g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_036 | Missing Additional Image Link
+         Input   : No g:additional_image_link node
+         Expected: Feed processes successfully without errors
+         ============================================================ -->
+    <item>
+      <id>TC_XML_036</id>
+      <title>Test Product - No Additional Image Link</title>
+      <link>https://example.com/product/tc-xml-036</link>
+      <description>Product to test feed processing when g:additional_image_link node is entirely absent.</description>
+      <image_link>https://example.com/images/tc-xml-036-main.jpg</image_link>
+      <!-- No g:additional_image_link node present -->
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_037 | Multiple Products with Additional Images
+         Product A: 2 additional images | Product B: 3 additional images
+         Expected: Each product displays only its own images
+         ============================================================ -->
+    <item>
+      <id>TC_XML_037_PRODUCT_A</id>
+      <title>Test Product A - Two Additional Images</title>
+      <link>https://example.com/product/tc-xml-037-a</link>
+      <description>TC_XML_037 Product A: 2 additional image links (037-a-img1, 037-a-img2).</description>
+      <image_link>https://example.com/images/tc-xml-037-a-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/037-a-img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/037-a-img2.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <item>
+      <id>TC_XML_037_PRODUCT_B</id>
+      <title>Test Product B - Three Additional Images</title>
+      <link>https://example.com/product/tc-xml-037-b</link>
+      <description>TC_XML_037 Product B: 3 additional image links (037-b-img1, 037-b-img2, 037-b-img3).</description>
+      <image_link>https://example.com/images/tc-xml-037-b-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/037-b-img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/037-b-img2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/037-b-img3.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>120.00 INR</price>
+      <sale_price>120.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_038 | Image Order Preservation
+         Input   : img3 → img1 → img2 (intentionally out of sequence)
+         Expected: Output preserves img3, img1, img2 sequence exactly
+         ============================================================ -->
+    <item>
+      <id>TC_XML_038</id>
+      <title>Test Product - Additional Image Order Preservation</title>
+      <link>https://example.com/product/tc-xml-038</link>
+      <description>Product to test that g:additional_image_link URLs appear in output in the same order as in XML (img3, img1, img2).</description>
+      <image_link>https://example.com/images/tc-xml-038-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/img3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/img2.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_039 | Additional Image Link Mixed with image_link
+         Input   : image_link (main) + three g:additional_image_link nodes
+         Expected: Main image in image_link column; others in additional_image_link column
+         ============================================================ -->
+    <item>
+      <id>TC_XML_039</id>
+      <title>Test Product - Main and Additional Image Separation</title>
+      <link>https://example.com/product/tc-xml-039</link>
+      <description>Product to verify image_link and g:additional_image_link are always stored in their respective separate columns.</description>
+      <image_link>https://test.com/main-image.jpg</image_link>
+      <g:additional_image_link>https://test.com/additional-img1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/additional-img2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/additional-img3.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_040 | Large Number of Image Links
+         Input   : 20 g:additional_image_link nodes
+         Expected: All 20 image URLs captured without loss
+         ============================================================ -->
+    <item>
+      <id>TC_XML_040</id>
+      <title>Test Product - Twenty Additional Image Links</title>
+      <link>https://example.com/product/tc-xml-040</link>
+      <description>Product to test parser handling of 20 g:additional_image_link nodes.</description>
+      <image_link>https://example.com/images/tc-xml-040-main.jpg</image_link>
+      <g:additional_image_link>https://test.com/040-img01.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img02.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img03.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img04.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img05.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img06.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img07.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img08.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img09.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img10.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img11.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img12.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img13.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img14.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img15.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img16.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img17.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img18.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img19.jpg</g:additional_image_link>
+      <g:additional_image_link>https://test.com/040-img20.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_041 | Similar Node Names
+         Input   : <title>Samsung Galaxy S25</title> + <g:short_title>Galaxy S25</g:short_title>
+         Expected: Title column = "Samsung Galaxy S25"; Short Title column = "Galaxy S25"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_041</id>
+      <title>Samsung Galaxy S25</title>
+      <g:short_title>Galaxy S25</g:short_title>
+      <link>https://example.com/product/tc-xml-041</link>
+      <description>Product to verify title and g:short_title are read into separate columns.</description>
+      <image_link>https://example.com/images/tc-xml-041.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>79999.00 INR</price>
+      <sale_price>79999.00 INR</sale_price>
+      <Brand>Samsung</Brand>
+      <gender>Unisex</gender>
+      <product_type>Electronics</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_042 | Similar Repeated Nodes
+         Input   : title repeated twice + g:short_title repeated twice
+         Expected: Values remain in their respective columns; no cross-population
+         ============================================================ -->
+    <item>
+      <id>TC_XML_042</id>
+      <title>Samsung Galaxy S25 Ultra</title>
+      <title>Samsung Galaxy S25 Ultra Edition</title>
+      <g:short_title>Galaxy S25 Ultra</g:short_title>
+      <g:short_title>S25 Ultra</g:short_title>
+      <link>https://example.com/product/tc-xml-042</link>
+      <description>Product to test repeated title and repeated g:short_title nodes do not merge with each other.</description>
+      <image_link>https://example.com/images/tc-xml-042.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>129999.00 INR</price>
+      <sale_price>129999.00 INR</sale_price>
+      <Brand>Samsung</Brand>
+      <gender>Unisex</gender>
+      <product_type>Electronics</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_043 | Description and Short Description Separation
+         Input   : description + g:short_description nodes
+         Expected: Values appear in their correct respective columns
+         ============================================================ -->
+    <item>
+      <id>TC_XML_043</id>
+      <title>Test Product - Description Separation</title>
+      <link>https://example.com/product/tc-xml-043</link>
+      <description>Full description of the product for TC_XML_043. This is the long description field used to verify it does not bleed into the short description column.</description>
+      <g:short_description>Short desc for TC_XML_043.</g:short_description>
+      <image_link>https://example.com/images/tc-xml-043.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_044 | Similar Node Names with Same Value
+         Input   : title = "Samsung" AND g:short_title = "Samsung"
+         Expected: Both columns populated independently with "Samsung"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_044</id>
+      <title>Samsung</title>
+      <g:short_title>Samsung</g:short_title>
+      <link>https://example.com/product/tc-xml-044</link>
+      <description>Product to test title and g:short_title containing the identical value "Samsung" are populated independently without confusion.</description>
+      <image_link>https://example.com/images/tc-xml-044.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>Samsung</Brand>
+      <gender>Unisex</gender>
+      <product_type>Electronics</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_045 | Similar Node Names with Partial Match
+         Input   : title, g:product_title, g:short_title all present
+         Expected: Each node mapped to its configured column only; no substring matching
+         ============================================================ -->
+    <item>
+      <id>TC_XML_045</id>
+      <title>Main Product Title</title>
+      <g:product_title>Product Title Variant</g:product_title>
+      <g:short_title>Short Title</g:short_title>
+      <link>https://example.com/product/tc-xml-045</link>
+      <description>Product to test that the parser uses exact name matching and does not apply substring matching (title vs product_title vs short_title).</description>
+      <image_link>https://example.com/images/tc-xml-045.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_046 | Repeated Title and Repeated Short Title
+         Input   : title×2 + g:short_title×2
+         Expected: Title column = "Title Value One,Title Value Two"
+                   Short Title column = "Short Title One,Short Title Two"
+                   (each column aggregates only its own node values)
+         ============================================================ -->
+    <item>
+      <id>TC_XML_046</id>
+      <title>Title Value One</title>
+      <title>Title Value Two</title>
+      <g:short_title>Short Title One</g:short_title>
+      <g:short_title>Short Title Two</g:short_title>
+      <link>https://example.com/product/tc-xml-046</link>
+      <description>Product to test that title aggregates only title values and g:short_title aggregates only its own values, with no cross-mixing.</description>
+      <image_link>https://example.com/images/tc-xml-046.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_047 | Similar Image Nodes
+         Input   : image_link + two g:additional_image_link nodes
+         Expected: image_link and g:additional_image_link mapped to separate columns
+         ============================================================ -->
+    <item>
+      <id>TC_XML_047</id>
+      <title>Test Product - Image Node Separation</title>
+      <link>https://example.com/product/tc-xml-047</link>
+      <description>Product to verify image_link and g:additional_image_link are never mixed; each maps to its own separate column.</description>
+      <image_link>https://example.com/images/tc-xml-047-main.jpg</image_link>
+      <g:additional_image_link>https://example.com/images/tc-xml-047-extra1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://example.com/images/tc-xml-047-extra2.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_048 | Similar Custom Attributes
+         Input   : g:color=Red + g:color_family=Warm Colors
+         Expected: g:color → Color column = "Red"
+                   g:color_family → Color Family column = "Warm Colors"
+         ============================================================ -->
+    <item>
+      <id>TC_XML_048</id>
+      <title>Test Product - Color and Color Family Separation</title>
+      <link>https://example.com/product/tc-xml-048</link>
+      <description>Product to test that g:color and g:color_family are stored in separate columns and do not contaminate each other.</description>
+      <image_link>https://example.com/images/tc-xml-048.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color_family>Warm Colors</g:color_family>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_049 | Node Names with Common Prefix
+         Input   : product_type + product_category
+         Expected: Values stored independently in their respective columns
+         ============================================================ -->
+    <item>
+      <id>TC_XML_049</id>
+      <title>Test Product - Common Prefix Node Names</title>
+      <link>https://example.com/product/tc-xml-049</link>
+      <description>Product to test that product_type and product_category (sharing the prefix "product_") are stored independently in separate columns.</description>
+      <image_link>https://example.com/images/tc-xml-049.jpg</image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Eyeglasses</product_type>
+      <product_category>Vision Care</product_category>
+    </item>
+
+    <!-- ============================================================
+         TC_XML_050 | Cross-Column Contamination Validation (Full)
+         Input   : title, g:short_title, image_link, g:additional_image_link,
+                   description, g:short_description, g:color(×2), g:size(×2)
+         Expected: Every column contains ONLY values from its own XML node
+         ============================================================ -->
+    <item>
+      <id>TC_XML_050</id>
+      <title>Test Product - Full Cross-Column Contamination Validation</title>
+      <g:short_title>Cross-Column Validation Test</g:short_title>
+      <link>https://example.com/product/tc-xml-050</link>
+      <description>Full description for TC_XML_050 cross-column contamination validation test product.</description>
+      <g:short_description>Short description for TC_XML_050.</g:short_description>
+      <image_link>https://example.com/images/tc-xml-050-main.jpg</image_link>
+      <g:additional_image_link>https://example.com/images/tc-xml-050-extra1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://example.com/images/tc-xml-050-extra2.jpg</g:additional_image_link>
+      <availability>in stock</availability>
+      <condition>new</condition>
+      <price>100.00 INR</price>
+      <sale_price>100.00 INR</sale_price>
+      <Brand>TestBrand</Brand>
+      <gender>Unisex</gender>
+      <product_type>Apparel</product_type>
+      <g:color>Red</g:color>
+      <g:color>Blue</g:color>
+      <g:size>S</g:size>
+      <g:size>M</g:size>
+    </item>
+
+  </channel>
+</rss>
