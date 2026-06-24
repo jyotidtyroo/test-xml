@@ -508,8 +508,8 @@
       <title>Large Feed Sample Product 003</title>
       <link>https://example.com/product/tc-xml-023-003</link>
       <description>Large feed sample product 003 for TC_XML_023.</description>
-      <image_link>https://example.com/images/tc-xml-023-003.jpg</image_link>
-      <availability>out of stock</availability>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428288277-1.jpg</image_link>
+      <availability>in stock</availability>
       <condition>new</condition>
       <price>200.00 INR</price>
       <sale_price>200.00 INR</sale_price>
