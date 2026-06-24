@@ -468,7 +468,7 @@
                Use a script to duplicate TC_XML_023_TEMPLATE to 1000 items.
          ============================================================ -->
     <item>
-      <id>TC_XML_023_TEMPLATE</id>
+      <id>TC_XML_023</id>
       <title>Large Feed Template Product 001</title>
       <link>https://example.com/product/tc-xml-023-001</link>
       <description>Template product for large feed performance test (TC_XML_023). Duplicate with unique IDs to generate 1000 products.</description>
@@ -567,7 +567,7 @@
       <title>Test Product - Feed Reprocessing Consistency</title>
       <link>https://example.com/product/tc-xml-024</link>
       <description>Product to verify repeated g:color values remain consistent after feed is uploaded and processed twice.</description>
-      <image_link>https://example.com/images/tc-xml-024.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428288277-1.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
