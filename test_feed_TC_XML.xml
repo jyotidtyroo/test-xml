@@ -41,7 +41,7 @@
       <title>Test Product - Duplicate Color Values</title>
       <link>https://example.com/product/tc-xml-005</link>
       <description>Product to test duplicate g:color node values.</description>
-      <image_link>https://example.com/images/tc-xml-005.jpg</image_link>
+      <image_link>https://www.fastrackeyewear.com/product/blue-aviator-sunglasses-for-men-and-women-from-fastrack-m281bl3v</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -63,7 +63,7 @@
       <title>Test Product - Empty Repeated Color Node</title>
       <link>https://example.com/product/tc-xml-006</link>
       <description>Product to test one valid and one empty g:color node.</description>
-      <image_link>https://example.com/images/tc-xml-006.jpg</image_link>
+      <image_link>https://www.fastrackeyewear.com/product/brown-aviator-sunglasses-for-men-and-women-from-fastrack-m281br4v</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
