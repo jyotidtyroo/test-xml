@@ -41,8 +41,8 @@
       <title>Test Product - Duplicate Color Values</title>
       <link>https://example.com/product/tc-xml-005</link>
       <description>Product to test duplicate g:color node values.</description>
-      <image_link>https://example.com/images/tc-xml-005.jpg</image_link>
-      <availability>in stock</availability>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
+      <availability>out of stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
       <sale_price>100.00 INR</sale_price>
@@ -62,8 +62,8 @@
       <title>Test Product - Empty Repeated Color Node</title>
       <link>https://example.com/product/tc-xml-006</link>
       <description>Product to test one valid and one empty g:color node.</description>
-      <image_link>https://example.com/images/tc-xml-006.jpg</image_link>
-      <availability>in stock</availability>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
+      <availability>out of stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
       <sale_price>100.00 INR</sale_price>
@@ -84,7 +84,7 @@
       <title>Test Product - Missing Color Node</title>
       <link>https://example.com/product/tc-xml-007</link>
       <description>Product to test absence of g:color node.</description>
-      <image_link>https://example.com/images/tc-xml-007.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -105,7 +105,7 @@
       <title>Test Product - Size Order Preservation</title>
       <link>https://example.com/product/tc-xml-008</link>
       <description>Product to test that repeated g:size node order is preserved (L, M, S).</description>
-      <image_link>https://example.com/images/tc-xml-008.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -128,7 +128,7 @@
       <title>Test Product - Interleaved Repeated Nodes</title>
       <link>https://example.com/product/tc-xml-009</link>
       <description>Product to test interleaved g:color and g:size nodes; parser must group same nodes correctly.</description>
-      <image_link>https://example.com/images/tc-xml-009.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -151,7 +151,7 @@
       <title>Men's T-Shirt &amp; Jeans</title>
       <link>https://example.com/product/tc-xml-010</link>
       <description>Product to test special characters (apostrophe and ampersand entity) in title.</description>
-      <image_link>https://example.com/images/tc-xml-010.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -172,7 +172,7 @@
       <title>Tom &amp; Jerry</title>
       <link>https://example.com/product/tc-xml-011</link>
       <description>Product to test XML entity decoding — &amp;amp; must decode to &amp;.</description>
-      <image_link>https://example.com/images/tc-xml-011.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
