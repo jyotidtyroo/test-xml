@@ -85,7 +85,7 @@
       <link>https://example.com/product/tc-xml-007</link>
       <description>Product to test absence of g:color node.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
-      <availability>out of stock</availability>
+      <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
       <sale_price>100.00 INR</sale_price>
