@@ -39,9 +39,9 @@
     <item>
       <id>TC_XML_005</id>
       <title>Test Product - Duplicate Color Values</title>
-      <link>https://en-sa.6thstreet.com/go-walk-5-sport-shoes-white-124010-wlv.html</link>
+      <link>https://example.com/product/tc-xml-005</link>
       <description>Product to test duplicate g:color node values.</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
+      <image_link>https://example.com/images/tc-xml-005.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -52,7 +52,6 @@
       <g:color>Red</g:color>
       <g:color>Red</g:color>
     </item>
-
     <!-- ============================================================
          TC_XML_006 | Empty Repeated Node
          Input   : <g:color>Red</g:color><g:color></g:color>
@@ -61,9 +60,9 @@
     <item>
       <id>TC_XML_006</id>
       <title>Test Product - Empty Repeated Color Node</title>
-      <link>https://en-sa.6thstreet.com/sneakers-white-5fm00002u-125.html</link>
+      <link>https://example.com/product/tc-xml-006</link>
       <description>Product to test one valid and one empty g:color node.</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/5/f/5fm00002u-125-1_1.jpg</image_link>
+      <image_link>https://example.com/images/tc-xml-006.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -83,9 +82,9 @@
     <item>
       <id>TC_XML_007</id>
       <title>Test Product - Missing Color Node</title>
-      <link>https://en-sa.6thstreet.com/sneakers-white-5fm00002u-125.html</link>
+      <link>https://example.com/product/tc-xml-007</link>
       <description>Product to test absence of g:color node.</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/4/0/4062055625405.jpg</image_link>
+      <image_link>https://example.com/images/tc-xml-007.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -101,12 +100,12 @@
          Input   : <g:size>L</g:size><g:size>M</g:size><g:size>S</g:size>
          Expected: Size column contains "L,M,S"
          ============================================================ -->
-    <item>
+   <item>
       <id>TC_XML_008</id>
       <title>Test Product - Size Order Preservation</title>
-      <link>https://en-sa.6thstreet.com/sneakers-white-5fm00002u-125.html</link>
+      <link>https://example.com/product/tc-xml-008</link>
       <description>Product to test that repeated g:size node order is preserved (L, M, S).</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/0/8/088503940027392-gold-760x850.jpg</image_link>
+      <image_link>https://example.com/images/tc-xml-008.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -124,12 +123,12 @@
          Input   : <g:color>Red</g:color><g:size>M</g:size><g:color>Blue</g:color>
          Expected: Color column = "Red,Blue"; Size column = "M"
          ============================================================ -->
-    <item>
+   <item>
       <id>TC_XML_009</id>
       <title>Test Product - Interleaved Repeated Nodes</title>
-      <link>https://en-sa.6thstreet.com/sneakers-white-5fm00002u-125.html</link>
+      <link>https://example.com/product/tc-xml-009</link>
       <description>Product to test interleaved g:color and g:size nodes; parser must group same nodes correctly.</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/5/0/5059049379696-1.jpg/image_link>
+      <image_link>https://example.com/images/tc-xml-009.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -150,9 +149,9 @@
     <item>
       <id>TC_XML_010</id>
       <title>Men's T-Shirt &amp; Jeans</title>
-      <link>https://en-sa.6thstreet.com/sneakers-white-5fm00002u-125.html</link>
+      <link>https://example.com/product/tc-xml-010</link>
       <description>Product to test special characters (apostrophe and ampersand entity) in title.</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/193642885897-1.jpg</image_link>
+      <image_link>https://example.com/images/tc-xml-010.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -171,9 +170,9 @@
     <item>
       <id>TC_XML_011</id>
       <title>Tom &amp; Jerry</title>
-      <link>https://en-sa.6thstreet.com/sneakers-white-5fm00002u-125.html</link>
+      <link>https://example.com/product/tc-xml-011</link>
       <description>Product to test XML entity decoding — &amp;amp; must decode to &amp;.</description>
-      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/e/f/ef3124-1.jpg</image_link>
+      <image_link>https://example.com/images/tc-xml-011.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -182,6 +181,7 @@
       <gender>Unisex</gender>
       <product_type>Apparel</product_type>
     </item>
+
 
     <!-- ============================================================
          TC_XML_012 | Unicode Values
