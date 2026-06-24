@@ -42,7 +42,7 @@
       <link>https://example.com/product/tc-xml-005</link>
       <description>Product to test duplicate g:color node values.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
-      <availability>in stock</availability>
+      <availability>out of stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
       <sale_price>100.00 INR</sale_price>
@@ -63,7 +63,7 @@
       <link>https://example.com/product/tc-xml-006</link>
       <description>Product to test one valid and one empty g:color node.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
-      <availability>in stock</availability>
+      <availability>out of stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
       <sale_price>100.00 INR</sale_price>
