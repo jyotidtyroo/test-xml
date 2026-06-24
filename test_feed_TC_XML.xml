@@ -83,7 +83,7 @@
     <item>
       <id>TC_XML_007</id>
       <title>Test Product - Missing Color Node</title>
-      <link>https://example.com/product/tc-xml-007</link>
+      <link>https://media.6media.me/media/catalog/product/2/0/205089-0fs-lt-gry-cd-pnk-760x850-4.jpg</link>
       <description>Product to test absence of g:color node.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/4/0/4062055625405.jpg</image_link>
       <availability>in stock</availability>
@@ -104,7 +104,7 @@
     <item>
       <id>TC_XML_008</id>
       <title>Test Product - Size Order Preservation</title>
-      <link>https://example.com/product/tc-xml-008</link>
+      <link>https://media.6media.me/media/catalog/product/2/0/205089-0fs-lt-gry-cd-pnk-760x850-4.jpg</link>
       <description>Product to test that repeated g:size node order is preserved (L, M, S).</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/0/8/088503940027392-gold-760x850.jpg</image_link>
       <availability>in stock</availability>
@@ -127,7 +127,7 @@
     <item>
       <id>TC_XML_009</id>
       <title>Test Product - Interleaved Repeated Nodes</title>
-      <link>https://example.com/product/tc-xml-009</link>
+      <link>https://media.6media.me/media/catalog/product/2/0/205089-0fs-lt-gry-cd-pnk-760x850-4.jpg</link>
       <description>Product to test interleaved g:color and g:size nodes; parser must group same nodes correctly.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/5/0/5059049379696-1.jpg/image_link>
       <availability>in stock</availability>
@@ -150,7 +150,7 @@
     <item>
       <id>TC_XML_010</id>
       <title>Men's T-Shirt &amp; Jeans</title>
-      <link>https://example.com/product/tc-xml-010</link>
+      <link>https://media.6media.me/media/catalog/product/2/0/205089-0fs-lt-gry-cd-pnk-760x850-4.jpg</link>
       <description>Product to test special characters (apostrophe and ampersand entity) in title.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/193642885897-1.jpg</image_link>
       <availability>in stock</availability>
@@ -171,7 +171,7 @@
     <item>
       <id>TC_XML_011</id>
       <title>Tom &amp; Jerry</title>
-      <link>https://example.com/product/tc-xml-011</link>
+      <link>https://media.6media.me/media/catalog/product/2/0/205089-0fs-lt-gry-cd-pnk-760x850-4.jpg</link>
       <description>Product to test XML entity decoding — &amp;amp; must decode to &amp;.</description>
       <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/e/f/ef3124-1.jpg</image_link>
       <availability>in stock</availability>
