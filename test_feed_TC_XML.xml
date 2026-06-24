@@ -39,9 +39,9 @@
     <item>
       <id>TC_XML_005</id>
       <title>Test Product - Duplicate Color Values</title>
-      <link>https://example.com/product/tc-xml-005</link>
+      <link>https://en-sa.6thstreet.com/go-walk-5-sport-shoes-white-124010-wlv.html</link>
       <description>Product to test duplicate g:color node values.</description>
-      <image_link>https://www.fastrackeyewear.com/product/blue-aviator-sunglasses-for-men-and-women-from-fastrack-m281bl3v</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -61,9 +61,9 @@
     <item>
       <id>TC_XML_006</id>
       <title>Test Product - Empty Repeated Color Node</title>
-      <link>https://example.com/product/tc-xml-006</link>
+      <link>https://media.6media.me/media/catalog/product/f/m/fm3269_d1_model_ecom.jpg</link>
       <description>Product to test one valid and one empty g:color node.</description>
-      <image_link>https://www.fastrackeyewear.com/product/brown-aviator-sunglasses-for-men-and-women-from-fastrack-m281br4v</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/5/f/5fm00002u-125-1_1.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
