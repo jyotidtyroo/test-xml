@@ -193,7 +193,7 @@
       <title>नमस्ते</title>
       <link>https://example.com/product/tc-xml-012</link>
       <description>Product to test UTF-8 Unicode title value (Hindi: Namaste).</description>
-      <image_link>https://example.com/images/tc-xml-012.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -213,7 +213,7 @@
       <title>Test Product - Long Description (1000 chars)</title>
       <link>https://example.com/product/tc-xml-013</link>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipiscing velit, sed quia non numquam eius modi tempora incidunt labore et dolore magnam aliquam quaerat.</description>
-      <image_link>https://example.com/images/tc-xml-013.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -233,7 +233,7 @@
       <title>Red, Blue Shirt</title>
       <link>https://example.com/product/tc-xml-014</link>
       <description>Product to test that a comma inside a node value is handled correctly and the value is not split.</description>
-      <image_link>https://example.com/images/tc-xml-014.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -254,7 +254,7 @@
       <link>https://example.com/product/tc-xml-015</link>
       <description><![CDATA[This is a base description using CDATA to test CDATA handling in the standard description node.]]></description>
       <g:description><![CDATA[Special Offer]]></g:description>
-      <image_link>https://example.com/images/tc-xml-015.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -274,7 +274,7 @@
       <title>Test Product - Ten Size Values</title>
       <link>https://example.com/product/tc-xml-016</link>
       <description>Product to test g:size node repeated 10 times.</description>
-      <image_link>https://example.com/images/tc-xml-016.jpg</image_link>
+     <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -304,7 +304,7 @@
       <title>Test Product A - Two Colors</title>
       <link>https://example.com/product/tc-xml-017-a</link>
       <description>TC_XML_017 Product A: should have exactly 2 colors (Red, Blue).</description>
-      <image_link>https://example.com/images/tc-xml-017-a.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -321,7 +321,7 @@
       <title>Test Product B - Three Colors</title>
       <link>https://example.com/product/tc-xml-017-b</link>
       <description>TC_XML_017 Product B: should have exactly 3 colors (Purple, Yellow, Orange).</description>
-      <image_link>https://example.com/images/tc-xml-017-b.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>120.00 INR</price>
@@ -344,7 +344,7 @@
       <title>Test Product A - Isolation Source (Red, Blue)</title>
       <link>https://example.com/product/tc-xml-018-a</link>
       <description>TC_XML_018 Product A: colors Red and Blue must not leak into Product B.</description>
-      <image_link>https://example.com/images/tc-xml-018-a.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -361,7 +361,7 @@
       <title>Test Product B - Isolation Target (Green only)</title>
       <link>https://example.com/product/tc-xml-018-b</link>
       <description>TC_XML_018 Product B: must contain only Green; verify Red and Blue from Product A do not appear here.</description>
-      <image_link>https://example.com/images/tc-xml-018-b.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>110.00 INR</price>
@@ -382,7 +382,7 @@
       <title>Test Product - Mixed Single and Repeated Nodes</title>
       <link>https://example.com/product/tc-xml-019</link>
       <description>Product to test single title node alongside two repeated g:color nodes.</description>
-      <image_link>https://example.com/images/tc-xml-019.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -404,7 +404,7 @@
       <title>Test Product - Unknown Custom Attribute Node</title>
       <link>https://example.com/product/tc-xml-020</link>
       <description>Product to test that an unknown/unsupported node does not affect supported node processing.</description>
-      <image_link>https://example.com/images/tc-xml-020.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -427,7 +427,7 @@
       <title>Test Product - Case Sensitivity in Node Names</title>
       <link>https://example.com/product/tc-xml-021</link>
       <description>Product to test case sensitivity: g:Color (capital C) vs g:color (lowercase c).</description>
-      <image_link>https://example.com/images/tc-xml-021.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -449,7 +449,7 @@
       <title>Test Product - Namespace Node Parsing</title>
       <link>https://example.com/product/tc-xml-022</link>
       <description>Product to test that the g: namespace-prefixed node g:color is parsed and mapped correctly.</description>
-      <image_link>https://example.com/images/tc-xml-022.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -472,7 +472,7 @@
       <title>Large Feed Template Product 001</title>
       <link>https://example.com/product/tc-xml-023-001</link>
       <description>Template product for large feed performance test (TC_XML_023). Duplicate with unique IDs to generate 1000 products.</description>
-      <image_link>https://example.com/images/tc-xml-023-001.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -491,7 +491,7 @@
       <title>Large Feed Sample Product 002</title>
       <link>https://example.com/product/tc-xml-023-002</link>
       <description>Large feed sample product 002 for TC_XML_023.</description>
-      <image_link>https://example.com/images/tc-xml-023-002.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>150.00 INR</price>
@@ -525,7 +525,7 @@
       <title>Large Feed Sample Product 004</title>
       <link>https://example.com/product/tc-xml-023-004</link>
       <description>Large feed sample product 004 for TC_XML_023.</description>
-      <image_link>https://example.com/images/tc-xml-023-004.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>180.00 INR</price>
@@ -543,7 +543,7 @@
       <title>Large Feed Sample Product 005</title>
       <link>https://example.com/product/tc-xml-023-005</link>
       <description>Large feed sample product 005 for TC_XML_023.</description>
-      <image_link>https://example.com/images/tc-xml-023-005.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>220.00 INR</price>
@@ -589,7 +589,7 @@
       <title>Test Product - Multiple Repeated Attributes</title>
       <link>https://example.com/product/tc-xml-025</link>
       <description>Product to test several simultaneously repeated nodes: Color(2), Size(3), Material(2).</description>
-      <image_link>https://example.com/images/tc-xml-025.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -616,7 +616,7 @@
       <title>Test Product - Cross-Node Contamination Check</title>
       <link>https://example.com/product/tc-xml-026</link>
       <description>Product to verify that g:color values never appear in the Size column and g:size values never appear in the Color column.</description>
-      <image_link>https://example.com/images/tc-xml-026.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -640,7 +640,7 @@
       <title>Test Product - Blank Color Node Between Valid Values</title>
       <link>https://example.com/product/tc-xml-027</link>
       <description>Product to test a blank g:color node sandwiched between two valid values (Red and Blue).</description>
-      <image_link>https://example.com/images/tc-xml-027.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>100.00 INR</price>
@@ -675,7 +675,7 @@
       <title>Test Product - XML CSV Parity Check</title>
       <link>https://example.com/product/tc-xml-029</link>
       <description>Product to verify XML and CSV feeds produce identical output for the same data.</description>
-      <image_link>https://example.com/images/tc-xml-029.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <price>299.00 INR</price>
@@ -703,7 +703,7 @@
       <sale_price>100.00 INR</sale_price>
       <description>Product to test that Size, ID, Color in non-standard order are all mapped correctly.</description>
       <link>https://example.com/product/tc-xml-030</link>
-      <image_link>https://example.com/images/tc-xml-030.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <availability>in stock</availability>
       <condition>new</condition>
       <gender>Unisex</gender>
@@ -720,7 +720,7 @@
       <title>Test Product - Single Additional Image Link</title>
       <link>https://example.com/product/tc-xml-031</link>
       <description>Product to test a single g:additional_image_link node is mapped correctly.</description>
-      <image_link>https://example.com/images/tc-xml-031-main.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
       <availability>in stock</availability>
       <condition>new</condition>
@@ -741,7 +741,7 @@
       <title>Test Product - Two Additional Image Links</title>
       <link>https://example.com/product/tc-xml-032</link>
       <description>Product to test aggregation of two g:additional_image_link nodes.</description>
-      <image_link>https://example.com/images/tc-xml-032-main.jpg</image_link>
+     <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
       <g:additional_image_link>https://test.com/img2.jpg</g:additional_image_link>
       <availability>in stock</availability>
@@ -763,7 +763,7 @@
       <title>Test Product - Five Additional Image Links</title>
       <link>https://example.com/product/tc-xml-033</link>
       <description>Product to test five g:additional_image_link nodes are all captured.</description>
-      <image_link>https://example.com/images/tc-xml-033-main.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
       <g:additional_image_link>https://test.com/img2.jpg</g:additional_image_link>
       <g:additional_image_link>https://test.com/img3.jpg</g:additional_image_link>
@@ -788,7 +788,7 @@
       <title>Test Product - Duplicate Additional Image Links</title>
       <link>https://example.com/product/tc-xml-034</link>
       <description>Product to test duplicate g:additional_image_link values are preserved.</description>
-      <image_link>https://example.com/images/tc-xml-034-main.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
       <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
       <availability>in stock</availability>
@@ -810,7 +810,7 @@
       <title>Test Product - Empty Additional Image Link Node</title>
       <link>https://example.com/product/tc-xml-035</link>
       <description>Product to test one valid and one empty g:additional_image_link node.</description>
-      <image_link>https://example.com/images/tc-xml-035-main.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <g:additional_image_link>https://test.com/img1.jpg</g:additional_image_link>
       <g:additional_image_link></g:additional_image_link>
       <availability>in stock</availability>
@@ -832,7 +832,7 @@
       <title>Test Product - No Additional Image Link</title>
       <link>https://example.com/product/tc-xml-036</link>
       <description>Product to test feed processing when g:additional_image_link node is entirely absent.</description>
-      <image_link>https://example.com/images/tc-xml-036-main.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <!-- No g:additional_image_link node present -->
       <availability>in stock</availability>
       <condition>new</condition>
@@ -853,7 +853,7 @@
       <title>Test Product A - Two Additional Images</title>
       <link>https://example.com/product/tc-xml-037-a</link>
       <description>TC_XML_037 Product A: 2 additional image links (037-a-img1, 037-a-img2).</description>
-      <image_link>https://example.com/images/tc-xml-037-a-main.jpg</image_link>
+      <image_link>https://media.6media.me/media/catalog/product/cache/e051e343fbed6099e8c148bd11733e32/1/9/194428156576-2.jpg</image_link>
       <g:additional_image_link>https://test.com/037-a-img1.jpg</g:additional_image_link>
       <g:additional_image_link>https://test.com/037-a-img2.jpg</g:additional_image_link>
       <availability>in stock</availability>
